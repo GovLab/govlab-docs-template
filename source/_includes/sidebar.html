@@ -1,118 +1,28 @@
 <section class="sidebar-list">
-<ul>
-  <li><a class="js-trigger" href="#">Level One</a>
-    <ul>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-    </ul>
-  </li>
-
-  <li><a class="js-trigger" href="#">Level One</a>
-    <ul>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-    </ul>
-  </li>
-
-  <li><a class="js-trigger" href="#">Level One</a>
-    <ul>
-      <li><a class="js-trigger" href="#">Level Two</a>
-        <ul>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-        </ul>
-      </li>
-
-      <li><a class="js-trigger" href="#">Level Two</a>
-        <ul>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-        </ul>
-      </li>
-
-      <li><a class="js-trigger" href="#">Level Two</a>
-        <ul>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-        </ul>
-      </li>
-
-    </ul>
-
-  </li>
-
-  <li><a class="js-trigger" href="#">Level One</a>
-    <ul>
-      <li><a class="js-trigger" href="#">Level Two</a>
-        <ul>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-        </ul>
-      </li>
-
-      <li><a class="js-trigger" href="#">Level Two</a>
-        <ul>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-        </ul>
-      </li>
-
-      <li><a class="js-trigger" href="#">Level Two</a>
-        <ul>
-          <li><a class="js-trigger" href="#">Level Three</a>
-            <ul>
-              <li><a class="js-trigger" href="#">Level Four</a>
-                <ul>
-                  <li><a href="#">Level Five</a></li>
-                  <li><a href="#">Level Five</a></li>
-                  <li><a href="#">Level Five</a></li>
-                  <li><a href="#">Level Five</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Level Four</a></li>
-              <li><a href="#">Level Four</a></li>
-              <li><a href="#">Level Four</a></li>
+<ul class="animate">
+{% for i in site.data.titles %}
+  <li><a class="js-trigger" href="#{{i.title | slugify}}">{{i.title}}</a>
+    {% if i.subtitles %}
+      <ul class="animate">
+        {% for j in i.subtitles %}
+          <li class="animate"><a class="js-trigger" href="#{{j.title | slugify}}">{{j.title}}</a>
+          {% if j.subtitles %}
+            <ul class="animate">
+              {% for k in j.subtitles %}
+                <li class="animate"><a class="js-trigger" href="#{{k.title | slugify}}">{{k.title}}</a>
+                {% if k.subtitles %}
+                  <ul class="animate">
+                  {% for m in k.subtitles %}
+                    <li class="animate"><a class="js-trigger" href="#{{m.title | slugify}}">{{m.title}}</a>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              {% endfor %}
             </ul>
-          </li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-          <li><a href="#">Level Three</a></li>
-        </ul>
-      </li>
-
-    </ul>
-
-  </li>
-  <li><a class="js-trigger" href="#">Level One</a>
-    <ul>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-    </ul>
-  </li>
-
-  <li><a class="js-trigger" href="#">Level One</a>
-    <ul>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-      <li><a href="#">Level Two</a></li>
-    </ul>
-  </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+{% endfor %}
 </ul>
 </section>

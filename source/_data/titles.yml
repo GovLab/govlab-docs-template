@@ -7,6 +7,19 @@
             - title: Layouts
             - title: Data
             - title: Posts
+            - title: Layouts
+            - title: Data
+            - title: Posts
+            - title: Layouts
+            - title: Data
+            - title: Posts
+            - title: Layouts
+            - title: Data
+            - title: Posts
+            - title: Layouts
+            - title: Data
+            - title: Posts
+
         - title: Gulp
 
     - title: Styleguide
@@ -17,3 +30,13 @@
     - title: OD500
     - title: Data Collab
     - title: NOI
+
+- title: Team
+  subtitles: 
+    - title: Anna Bialas
+    - title: Ena Bek
+    - title: Denny Tek
+    - title: Mark Adkins
+    - title: David Naffis
+    - title: Chris Wong
+    - title: Claudio Mendonca

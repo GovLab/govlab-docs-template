@@ -1,4 +1,5 @@
 $main-color: #18fce3;
+// $main-color: #523080;
 
 * {
   box-sizing: border-box;
@@ -9,14 +10,20 @@ body {
 }
 
 .main-wrapper {
-  display: flex;
-  min-height: 100vh;
+  padding-left: 320px;
+  
 }
 
 .sidebar {
+  height: 100vh;
   background-color: darken($main-color, 20);
   width: 300px;
   padding-top: 40px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
 }
 
 .main-logo {
@@ -36,9 +43,21 @@ body {
 
 }
 
+
+
 .long-text {
+  .page-title {
+    margin-top: 30px;
+    margin-bottom: 80px;
+    font-weight: 100;
+    font-size: 4rem;
+    text-transform: none;
+    color: darken($main-color, 10);
+  }
+
   h1, h2, h3, h4, h5 {
     position: relative;
+    padding-top: 20px;
 
     &:after {
       content: attr(data-number);
@@ -89,10 +108,4 @@ body {
   h5 {
     line-height: 1;
   }
-
-  code {
-    color: darken(red, 6);
-  }
-
-
 }

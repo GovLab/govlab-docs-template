@@ -42,17 +42,20 @@
   li li a { padding-right: 35px;}
   li li li a { padding-right: 50px;}
 
-  li ul { 
+  .animate {
+    transition: all 0.8s;
+  }
+
+  li ul {
     max-height: 0;
     height: auto;
     overflow: hidden;
-    transition: all .5s ease;
   }
 
+  // li:hover > ul,
   .js-active > ul { 
     max-height: 10000px;
     height: auto;
-    transition: all .5s ease;
   }
 
   .js-active > a:not(:only-child):before { content: "–"; }
@@ -66,7 +69,10 @@
 .sidebar-list {
   background-color: darken($main-color, 20);
 
+  a:hover {
+    background-color: rgba(white, .3);
+  }
+  
   li ul { box-shadow: inset 0 2px 5px rgba(black, .4); }
-  li li { background-color: rgba(black, .05); }
-  li li li { background-color: rgba(black, .1); }
+  li li { background-color: rgba(black, .1); }
 }
